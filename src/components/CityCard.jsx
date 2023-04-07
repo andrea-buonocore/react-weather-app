@@ -39,11 +39,11 @@ const CityCard = (props) => {
             {
                 cityWeather && (
                     <>
-                    <Card className='my-5 p-2 shadow'>
+                    <Card className='my-5 p-3 shadow'>
                         <Row>
                     
                             <Col md={6} className='text-center'>
-                                <h2>{props.city.toUpperCase()}</h2>
+                                <h2 className='fw-bold'>{props.city.toUpperCase()}</h2>
                                 <Row className='align-items-center'>
                                     <Col xs={6}>
                                         <Card.Img variant="top" src={`https://openweathermap.org/img/wn/${cityWeather.weather[0].icon}@2x.png`} />

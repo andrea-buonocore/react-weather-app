@@ -57,7 +57,7 @@ const Home = () => {
                     onChange={(e) => setCity(e.target.value)}
                     id="inputSearch"
                 />
-                <Button type="submit" variant="dark">Search</Button>
+                <Button type="submit" variant="light"><i class="bi bi-search fs-5"></i></Button>
             </Form>
             {
                 lat && lon && (

@@ -42,7 +42,7 @@ const Forecast = (props) => {
 
     return (
         <>
-            <h2>Next 5 days / 3 hour forecast in {props.cityObj.name}:</h2>
+            <h2 className='my-4 text-light'>Next 5 days / 3 hour forecast in {props.cityObj.name}:</h2>
             {
                 forecast && (
                     forecast.list.map((day, index) => {

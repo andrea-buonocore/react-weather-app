@@ -1,12 +1,17 @@
-html, body {
-  height: 100%;
-  background: linear-gradient(0deg, rgba(0,0,0,.1), rgba(0,0,0,0.8)), url('https://images.pexels.com/photos/3560044/pexels-photo-3560044.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2') ;
-  background-size: cover;
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+html,
+body {
+  min-height: 100%;
+  background-repeat: no-repeat;
+  background: rgb(143, 188, 206);
+  background: linear-gradient(0deg, rgb(22, 90, 117) 35%, rgba(9, 114, 157, 1) 100%);
+  font-family: 'Poppins', sans-serif !important;
 }
 
 
 /* HOME */
-@media screen and (min-width: 768px){
+@media screen and (min-width: 768px) {
 
   #homeContainer {
     width: 50%;
@@ -20,7 +25,24 @@ html, body {
   border-bottom: 1px solid white;
   border-radius: 0;
   color: white;
+  outline: none;
 }
+
+#inputSearch:focus {
+  box-shadow: none;
+  ;
+}
+
+#inputSearch::placeholder {
+  color: white;
+}
+
+.card {
+  background-color: rgba(255, 255, 255, 0.085) !important;
+  color: white;
+}
+
+
 
 /* FOOTER  */
 
