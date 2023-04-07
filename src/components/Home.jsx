@@ -13,7 +13,7 @@ const Home = () => {
 
     const findCityCoordinates = async () => {
         try {
-            let response = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=5&appid=41e354b6aa739606011cbf7f6c8eb73f`);
+            let response = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=5&appid=cfe6d20a473b39d3713d15795c315e84`);
             if (response.ok) {
                 let data = await response.json();
                 console.log('Città trovate dopo input:', data);
@@ -58,7 +58,6 @@ const Home = () => {
                 />
                 <Button type="submit" variant="dark">Search</Button>
             </Form>
-
             {
                 lat && lon && (
                     <CityCard city={cityName} lat={lat} lon={lon} />
