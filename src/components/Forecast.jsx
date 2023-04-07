@@ -38,7 +38,7 @@ const Forecast = (props) => {
 
     useEffect(() => {
         findForecast();
-    }, [])
+    }, [props.cityObj.coord.lat, props.cityObj.coord.lon]);
 
     return (
         <>
