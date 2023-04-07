@@ -5,6 +5,13 @@ html, body {
 
 
 /* HOME */
+@media screen and (min-width: 768px){
+
+  #homeContainer {
+    width: 50%;
+  }
+
+}
 
 /* FOOTER  */
 

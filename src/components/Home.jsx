@@ -40,7 +40,7 @@ const Home = () => {
     }
 
     return (
-        <Container className='py-5'>
+        <Container className='py-5' id='homeContainer'>
             <Form className="d-flex" id='searchBar' onSubmit={
                 (e) => {
                     e.preventDefault();
