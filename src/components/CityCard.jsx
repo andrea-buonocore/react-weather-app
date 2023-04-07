@@ -3,6 +3,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { useState, useEffect } from 'react';
 import Forecast from './Forecast';
+
 const CityCard = (props) => {
 
     const [cityWeather, setCityWeather] = useState(null);
@@ -35,10 +36,12 @@ const CityCard = (props) => {
     return (
         <>
 
-            <Card className='my-5 p-2 shadow'>
-                {
-                    cityWeather && (
+            {
+                cityWeather && (
+                    <>
+                    <Card className='my-5 p-2 shadow'>
                         <Row>
+                    
                             <Col md={6} className='text-center'>
                                 <h2>{props.city.toUpperCase()}</h2>
                                 <Row className='align-items-center'>
@@ -87,14 +90,11 @@ const CityCard = (props) => {
                                 </Card.Body>
                             </Col>
                         </Row>
+                    </Card>
 
-                    )
-                }
-            </Card>
+                    <Forecast cityObj = {cityWeather}/>
+                    </>
 
-            {
-                cityWeather && (
-                    <Forecast cityObj={cityWeather} />
                 )
             }
         </>
