@@ -18,7 +18,7 @@ body {
 
 
 /* HOME */
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 1200px) {
 
   #homeContainer {
     width: 50%;
