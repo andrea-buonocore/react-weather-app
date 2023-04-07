@@ -7,6 +7,7 @@ const CityCard = (props) => {
 
     const [cityWeather, setCityWeather] = useState(null);
 
+
     const findCityWeatherInfo = async () => {
         try {
             let response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${props.lat}&lon=${props.lon}&appid=41e354b6aa739606011cbf7f6c8eb73f`);
@@ -75,12 +76,11 @@ const CityCard = (props) => {
                                     </Col>
                                     <Col className='border border-1 shadow-sm'>
                                         <p className='fw-bold m-0'>Umidity:</p>
-                                        <p className='m-0'>{cityWeather.main.humidity}</p>
+                                        <p className='m-0'>{cityWeather.main.humidity} %</p>
                                     </Col>
                                     <Col className='border border-1 shadow-sm'>
                                         <p className='fw-bold m-0'>Wind:</p>
                                     </Col>
-                                    
                                 </Row>
                             </Card.Body>
                         </Col>
