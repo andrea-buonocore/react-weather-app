@@ -1,15 +1,18 @@
-import { useParams } from 'react-router-dom'
-import { useState, useEffect } from 'react';
+import Button from 'react-bootstrap/Button';
+import Container from 'react-bootstrap/Container';
+import { useNavigate } from 'react-router-dom'
 
 const WeatherDetails = (props) => {
 
-    const params = useParams()
-    console.log('PARAMS OBJECT', params)
+    const navigate = useNavigate();
 
     return (
-        <div>
-            <h1>Weather Details</h1>
-        </div>
+        <Container className='my-5 text-center'>
+            <h3 className='text-light'>🛠️ STILL UNDER MAINTENANCE 🛠️ </h3>
+            <Button variant="light" onClick={() => {
+                navigate('/')
+            }}>Go Home</Button>
+        </Container>
     )
 }
 

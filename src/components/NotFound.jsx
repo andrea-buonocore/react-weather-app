@@ -2,7 +2,8 @@ import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import { useNavigate } from 'react-router-dom'
 const NotFound = () => {
-    const navigate = useNavigate()
+    const navigate = useNavigate();
+    
     return (
         <Container className='my-5 text-center'>
             <h3 className='text-light'>Sorry, this page does not exist.</h3>

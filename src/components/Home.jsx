@@ -3,6 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import { useState, useEffect } from 'react';
 import CityCard from './CityCard';
+import Alert from "react-bootstrap/Alert";
 
 const Home = () => {
 
@@ -10,6 +11,7 @@ const Home = () => {
     const [lat, setLat] = useState('');
     const [lon, setLon] = useState('');
     const [cityName, setCityName] = useState('');
+    const [isError, setIsError] = useState(false);
 
     const findCityCoordinates = async () => {
         try {
@@ -29,12 +31,15 @@ const Home = () => {
                 setLat(cityObjLat);
                 setLon(cityObjLon);
                 setCityName(cityObjName);
+                setIsError(false);
             }
             else {
+                setIsError(true);
                 return new Error('Errore nella fetch.', response.status);
             }
         }
         catch (err) {
+            setIsError(true);
             console.log(err);
         }
     }
@@ -62,6 +67,7 @@ const Home = () => {
                 />
                 <Button type="submit" variant="light"><i class="bi bi-search fs-5"></i></Button>
             </Form>
+            {isError && <Alert variant="danger" className='my-5'>Can't find the city! Try another one</Alert>}
             {
                 lat && lon && (
                     <CityCard city={cityName} lat={lat} lon={lon} />
