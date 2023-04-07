@@ -2,10 +2,12 @@ import Card from 'react-bootstrap/Card';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { useState, useEffect } from 'react';
+import Spinner from 'react-bootstrap/Spinner';
 
 const Forecast = (props) => {
 
     const [forecast, setForecast] = useState(null);
+    const [isLoading, setIsLoading] = useState(true);
 
     const findForecast = async () => {
         try {
@@ -15,8 +17,10 @@ const Forecast = (props) => {
                 let data = await response.json();
                 console.log('ecco i dati che ho trovato:', data);
                 setForecast(data);
+                setIsLoading(false);
             }
             else {
+                setIsLoading(false);
                 return new Error('Errore durante la recupero dei dati', response.status);
             }
         }
@@ -43,6 +47,15 @@ const Forecast = (props) => {
     return (
         <>
             <h2 className='my-4 text-light'>Next 5 days / 3 hour forecast in {props.cityObj.name}:</h2>
+            
+            {isLoading && (
+                <div className="text-center my-5">
+                    <Spinner animation="border" role="status" variant="light">
+                        <span className="visually-hidden">Loading...</span>
+                    </Spinner>
+                </div>
+            )}
+
             {
                 forecast && (
                     forecast.list.map((day, index) => {
