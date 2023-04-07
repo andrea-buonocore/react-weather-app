@@ -21,7 +21,7 @@ const CityCard = (props) => {
                 setCityWeather(data);
                 console.log(cityWeather);
                 setIsLoading(false);
-                setIsError(true);
+                setIsError(false);
             }
             else {
                 setIsError(true);
