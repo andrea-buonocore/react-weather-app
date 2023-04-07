@@ -6,13 +6,20 @@ import 'bootstrap-icons/font/bootstrap-icons.css'
 import CustomNavbar from './components/CustomNavbar';
 import CustomFooter from './components/CustomFooter';
 import Home from './components/Home';
+import NotFound from './components/NotFound';
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 function App() {
   return (
     <div className="App mb-5">
-      <CustomNavbar/>
-      <Home/>
-      <CustomFooter/>
+      <BrowserRouter>
+        <CustomNavbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+        <CustomFooter />
+      </BrowserRouter>
     </div>
   );
 }
