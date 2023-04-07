@@ -4,12 +4,13 @@ import Col from 'react-bootstrap/Col';
 import { useState, useEffect } from 'react';
 import Forecast from './Forecast';
 import Spinner from 'react-bootstrap/Spinner';
+import Alert from "react-bootstrap/Alert";
 
 const CityCard = (props) => {
 
     const [cityWeather, setCityWeather] = useState(null);
-    const [isLoading, setIsLoading] = useState(false);
-
+    const [isLoading, setIsLoading] = useState(true);
+    const [isError, setIsError] = useState(false);
 
     const findCityWeatherInfo = async () => {
         try {
@@ -19,8 +20,12 @@ const CityCard = (props) => {
                 console.log(`Weather info for ${props.city}:`, data);
                 setCityWeather(data);
                 console.log(cityWeather);
+                setIsLoading(false);
+                setIsError(true);
             }
             else {
+                setIsError(true);
+                setIsLoading(false);
                 return new Error("City not found");
             }
         }
@@ -37,6 +42,18 @@ const CityCard = (props) => {
 
     return (
         <>
+            {isLoading && (
+                <div className="text-center my-5">
+                    <Spinner animation="border" role="status" variant="light">
+                        <span className="visually-hidden">Loading...</span>
+                    </Spinner>
+                </div>
+            )}
+
+            {isError && (
+                <Alert variant="danger" className='my-5'>Can't find the city!</Alert>
+            )}
+
 
             {
                 cityWeather && (
