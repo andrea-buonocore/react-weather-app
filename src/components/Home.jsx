@@ -55,6 +55,7 @@ const Home = () => {
                     aria-label="Search"
                     value={city}
                     onChange={(e) => setCity(e.target.value)}
+                    id="inputSearch"
                 />
                 <Button type="submit" variant="dark">Search</Button>
             </Form>

@@ -1,6 +1,7 @@
 html, body {
   height: 100%;
-  
+  background: linear-gradient(0deg, rgba(0,0,0,.1), rgba(0,0,0,0.8)), url('https://images.pexels.com/photos/3560044/pexels-photo-3560044.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2') ;
+  background-size: cover;
 }
 
 
@@ -11,6 +12,14 @@ html, body {
     width: 50%;
   }
 
+}
+
+#inputSearch {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid white;
+  border-radius: 0;
+  color: white;
 }
 
 /* FOOTER  */
