@@ -15,7 +15,7 @@ const Home = () => {
 
     const findCityCoordinates = async () => {
         try {
-            let response = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=5&appid=cfe6d20a473b39d3713d15795c315e84`);
+            let response = await fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=5&appid=cfe6d20a473b39d3713d15795c315e84`);
             if (response.ok) {
                 let data = await response.json();
                 console.log('Città trovate dopo input:', data);
