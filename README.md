@@ -5,6 +5,9 @@ Dovrai creare una nuova applicazione per controllare il meteo in giro per il mon
 
 Realizzata con React, Bootstrap, Redux.
 
+![weather_screenshot](https://github.com/andrea-buonocore/react-weather-app/assets/123959335/b77a10c0-5d7d-4f5c-9b96-7947e31fd85e)
+
+
 ## API Reference
 
 #### OpenWeather API
